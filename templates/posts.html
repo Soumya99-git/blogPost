@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block head %}
+
+{% endblock %}
+<div class="main">
+    {% block body %}
+
+    
+    <h1><br>
+        Welcome to all Interactions
+        <br>
+        <a class="btn btn-success float-right" href="/create">+New Post</a>
+    </h1>
+    {% for p in post %}
+    <hr>
+    <h2>{{p.title}}</h2>
+    {%if p.author%}
+    <small>Written by: {{p.author}}</small><br>
+    {%else%}
+    <small>No Author present</small>
+    {%endif%}
+    <br>
+    <p1 style="white-space: pre-wrap;">{{p.content}}</p1>
+    <br>
+    <br>
+    <a class="btn btn-danger" href="./posts/delete/{{p.id}}">DELETE</a>
+    <a class="btn btn-primary" href="./posts/edit/{{p.id}}">EDIT</a>
+    {% endfor %}
+
+    {% endblock %}
+</div>

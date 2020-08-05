@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Edit Page</title>
+{% endblock %}
+
+{% block body %}
+<h2 style="text-align-last: center;">Edit the Blog</h2>
+<br>
+<form style="text-align-last: center;" action="/posts/edit/{{posts.id}}" method="POST">
+    Title: <input class="form-control" style="text-align-last: center;" type="text" name="title" id="title" value="{{posts.title}}"><br>
+    <br>Content: <textarea class="form-control" name="content" id="content" rows="3" >{{posts.content}}</textarea>
+    <br>Author: <input class="form-control" type="text" name="author" id="author" value="{{posts.author}}"><br>
+    <input type="submit" value="Update">
+</form>
+{% endblock %}

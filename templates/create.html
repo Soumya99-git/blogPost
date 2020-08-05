@@ -1,0 +1,15 @@
+{%extends "base.html"%}
+{%block body%}
+<hr>
+    <h2>
+        Create a New Post
+    </h2>
+    <form action="/posts" method="POST">
+        <input class ="form-control float-center" placeholder="Title",type="text" name="title" id="title"><br>
+        <input class ="form-control" placeholder="Author" type="text" name="author" id="author"><br>
+        <textarea class="form-control" placeholder="Content" name="content" id="content" rows="3"></textarea>
+        
+        <input class ="form-control float-center" type="submit" value="Post">
+    </form>
+<hr>
+{%endblock%}
